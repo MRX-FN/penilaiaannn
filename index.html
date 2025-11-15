@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Kuis Interaktif — Pilgan + Uraian</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link href="/Kuis-Anak-Anak//main.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="app">
+
+        <div class="card header">
+            <div class="logo">MRX</div>
+            <div>
+                <div class="title">Kuis Interaktif Ceria</div>
+                <div id="timer" style="
+                 font-size:20px;
+                 font-weight:bold;
+                 color:red;
+                 margin-bottom:10px;">
+</div>
+
+                <div class="subtitle">Kuis asik inovatif</div>
+            </div>
+        </div>
+
+        <!-- LOGIN -->
+        <section id="login" class="card">
+            <div class="center">
+                <h2>Selamat Datang! 🌈</h2>
+                <div class="muted">Masukkan nama dan kelasmu untuk mulai kuis</div>
+            </div>
+            <div style="height:12px"></div>
+            <div class="center">
+                <input id="name" type="text" placeholder="Nama (contoh: Budi)">
+                <input id="kelas" type="text" placeholder="Kelas (contoh: 4A)">
+                <div style="height:8px"></div>
+                <button id="btnStart">Mulai Kuis 🚀</button>
+            </div>
+        </section>
+
+        <!-- ARITMATIKA -->
+        <section id="arith" class="card hidden">
+            <div class="center">
+                <h3>Tantangan Angka 🔢</h3>
+                <div class="arith-box" id="arith-box">3 - 2 = ?</div>
+                <input id="arith-answer" type="number" placeholder="Jawaban">
+                <div style="height:8px"></div>
+                <button id="btnCheckArith">Kirim Jawaban</button>
+                <div style="height:10px"></div>
+                <div id="arith-feedback" class="muted"></div>
+                <div style="height:6px"></div>
+                <div class="muted">Jawab benar untuk membuka soal berikutnya</div>
+            </div>
+        </section>
+
+        <!-- QUIZ Pilihan Ganda -->
+        <section id="quiz" class="card hidden">
+            <div class="story-box" id="story-box" style="display:none"></div>
+            <div class="question" id="question-text">Pertanyaan</div>
+            <div class="options" id="options"></div>
+
+            <div class="controls">
+                <div class="muted">Soal <span id="progress">1</span> / <span id="total">10</span></div>
+                <div>
+                    <button id="btnPrev" class="small" disabled>
+                    <button id="btnNext" disabled>Jawab & Lanjut ➜</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- POST-PG: lanjut ke uraian -->
+        <section id="post" class="card hidden center">
+            <h3>Kamu sudah menyelesaikan bagian pilihan ganda 🎉</h3>
+            <div class="muted">Skor pilihan ganda akan ditampilkan setelah kamu menyelesaikan soal uraian.</div>
+            <div style="height:12px"></div>
+            <button id="btnToUraian">LANJUT KE SOAL URAIAN ✏️</button>
+        </section>
+
+        <!-- URAIAN SLIDES (1 soal per slide) -->
+        <section id="uraian" class="card hidden">
+            <div class="center">
+                <h3>Soal Uraian</h3>
+                <div class="muted">Jawab satu per satu lalu klik Lanjut</div>
+            </div>
+
+            <div id="uraian-slide-container" style="margin-top:12px"></div>
+
+            <div style="display:flex;gap:10px;justify-content:center;margin-top:12px">
+                <button id="btnPrevUraian" class="small" disabled>⟵ Sebelumnya</button>
+                <button id="btnNextUraian" class="small">Lanjut ➜</button>
+                <button id="btnSubmitUraian" style="display:none">Kirim Semua Jawaban ✅</button>
+            </div>
+        </section>
+
+        <!-- FINAL SCORE -->
+        <section id="final" class="card hidden center">
+            <div class="score-box">
+                <h2>🎉 Selesai Semua!</h2>
+                <div class="score-number" id="final-score-text">Skor: 0 / 10</div>
+                <div class="muted" id="final-message"></div>
+                <div style="height:12px"></div>
+                <button id="btnDownloadCSV">📥 Download Data (CSV)</button>
+                <div style="height:8px"></div>
+                <button id="btnKirimSheet">📤 Kirim ke Google Sheet</button>
+                <div style="height:8px"></div>
+                <button id="btnRestart" class="small">Ulangi Semua 🔁</button>
+            </div>
+        </section>
+
+    </div> 
+     
+    <script src="/Kuis-Anak-Anak/script2.js"></script>
+</body>
+
+</html>
